@@ -1,4 +1,4 @@
-import { Globe, Video, AlertCircle, Info } from 'lucide-react'
+import { Globe, Video, AlertCircle } from 'lucide-react'
 import { FormInput } from '../Common/FormInput'
 import { FileUpload } from '../Common/FileUpload'
 import {
@@ -84,12 +84,6 @@ export const SectionDeliverables: React.FC<SectionDeliverablesProps> = ({
               hint="Include all project source files, dependencies instructions, and configuration guidelines."
               onChange={(file) => onChange('sourceCodeZipFile', file)}
             />
-            <div className={styles.calloutBox} style={{ marginTop: '10px' }}>
-              <Info size={16} className={styles.calloutIcon} />
-              <div>
-                <strong>Packaging Note:</strong> Omit bulky compiled binaries or <code>node_modules</code>. Include a <code>README.md</code> with setup instructions.
-              </div>
-            </div>
           </div>
         </div>
 
