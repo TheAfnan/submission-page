@@ -1,0 +1,215 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background: rgba(8, 9, 12, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.container {
+  width: min(1180px, 100% - 48px);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-block: 16px;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: var(--foreground-subtle);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.breadcrumbLink {
+  color: var(--foreground-muted);
+  text-decoration: none;
+  transition: color 0.16s ease;
+}
+
+.breadcrumbLink:hover {
+  color: var(--accent-soft);
+}
+
+.breadcrumbSep {
+  opacity: 0.4;
+}
+
+.breadcrumbActive {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.brandingRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logoBadge {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(228, 35, 46, 0.2), rgba(228, 35, 46, 0.06));
+  border: 1px solid var(--border-brand);
+  display: grid;
+  place-items: center;
+  color: var(--brand-coral);
+  box-shadow: 0 4px 14px rgba(228, 35, 46, 0.15);
+  flex-shrink: 0;
+}
+
+.logoFlame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.eventEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--brand-coral);
+  text-transform: uppercase;
+}
+
+.universityTag {
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--overlay);
+  border: 1px solid var(--border);
+  color: var(--foreground-subtle);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.pageTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+  line-height: 1.1;
+  color: var(--foreground);
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.rightCol {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.modeWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.modeBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.modeDemo {
+  color: var(--warning);
+  background: rgba(233, 162, 59, 0.1);
+  border-color: rgba(233, 162, 59, 0.35);
+}
+
+.modeDemo:hover {
+  background: rgba(233, 162, 59, 0.18);
+  border-color: rgba(233, 162, 59, 0.5);
+}
+
+.modeProd {
+  color: var(--success);
+  background: rgba(98, 217, 155, 0.1);
+  border-color: rgba(98, 217, 155, 0.35);
+}
+
+.modeProd:hover {
+  background: rgba(98, 217, 155, 0.18);
+  border-color: rgba(98, 217, 155, 0.5);
+}
+
+.modeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--foreground);
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.16s var(--ease-out), background 0.16s ease, border-color 0.16s ease;
+  white-space: nowrap;
+}
+
+.backBtn:hover {
+  transform: translateY(-1px);
+  background: var(--surface-hover);
+  border-color: rgba(244, 245, 248, 0.3);
+  color: var(--accent-soft);
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(1180px, 100% - 32px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .rightCol {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .universityTag {
+    display: none;
+  }
+}

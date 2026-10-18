@@ -1,0 +1,370 @@
+.container {
+  width: min(880px, 100% - 48px);
+  margin-inline: auto;
+  padding-block: clamp(32px, 6vw, 64px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-brand);
+  background: radial-gradient(46rem 20rem at 50% 10%, rgba(228, 35, 46, 0.12), transparent 60%),
+    linear-gradient(165deg, rgba(19, 22, 32, 0.95), rgba(9, 10, 14, 0.98));
+  box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  padding: clamp(24px, 4.5vw, 44px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.heroSection {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconCircle {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  background: linear-gradient(150deg, rgba(98, 217, 155, 0.2), rgba(98, 217, 155, 0.05));
+  border: 1px solid rgba(98, 217, 155, 0.4);
+  display: grid;
+  place-items: center;
+  color: var(--success);
+  box-shadow: 0 12px 28px rgba(98, 217, 155, 0.18);
+  margin-bottom: 8px;
+}
+
+.checkIcon {
+  width: 32px;
+  height: 32px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--success);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+  font-weight: 700;
+  color: var(--foreground);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.message {
+  margin: 4px 0 0;
+  font-size: 0.95rem;
+  color: var(--foreground-muted);
+  max-width: 62ch;
+  line-height: 1.6;
+}
+
+.idBox {
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(228, 35, 46, 0.4);
+  background: rgba(13, 15, 20, 0.85);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.idInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.idLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brand-coral);
+}
+
+.idRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.idValue {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  font-feature-settings: 'tnum';
+  font-variant-numeric: tabular-nums;
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.copyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--foreground);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.copyBtn:hover {
+  background: var(--surface-hover);
+  border-color: rgba(244, 245, 248, 0.3);
+  color: var(--accent-soft);
+}
+
+.copySuccess {
+  color: var(--success);
+}
+
+.idNote {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--foreground-subtle);
+  line-height: 1.4;
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.metaCard {
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(13, 15, 20, 0.6);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.metaLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--foreground-subtle);
+}
+
+.metaValue {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--foreground);
+  word-break: break-word;
+}
+
+.deliverablesCard {
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  background: rgba(13, 15, 20, 0.6);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.deliverablesTitle {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--foreground-subtle);
+}
+
+.deliverablesList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.dItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--foreground-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dItem strong {
+  color: var(--foreground);
+}
+
+.dItem a {
+  color: var(--accent-soft);
+  text-decoration: underline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nextStepsCard {
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  background: rgba(228, 35, 46, 0.05);
+  border: 1px solid rgba(228, 35, 46, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nextStepsHeading {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-soft);
+  letter-spacing: 0.01em;
+}
+
+.stepsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stepsList li {
+  font-size: 0.84rem;
+  color: var(--foreground-muted);
+  line-height: 1.5;
+}
+
+.stepsList strong {
+  color: var(--foreground);
+}
+
+.stepsList code {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.actionsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.receiptBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--foreground);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.receiptBtn:hover {
+  background: var(--surface-hover);
+  border-color: rgba(244, 245, 248, 0.3);
+  transform: translateY(-1px);
+}
+
+.eventPageBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 24px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(228, 35, 46, 0.3);
+  transition: all 0.16s ease;
+}
+
+.eventPageBtn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.resetRow {
+  text-align: center;
+  padding-top: 8px;
+}
+
+.resetBtn {
+  background: transparent;
+  border: none;
+  color: var(--foreground-subtle);
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.16s ease;
+}
+
+.resetBtn:hover {
+  color: var(--accent-soft);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .metaGrid,
+  .deliverablesList {
+    grid-template-columns: 1fr;
+  }
+  .actionsRow {
+    flex-direction: column;
+  }
+  .receiptBtn,
+  .eventPageBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}

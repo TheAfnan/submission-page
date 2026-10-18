@@ -1,0 +1,186 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.requiredMark {
+  color: var(--brand-red);
+  margin-left: 4px;
+  font-weight: 700;
+}
+
+.countBadge {
+  font-size: 0.74rem;
+  color: var(--foreground-subtle);
+}
+
+.box {
+  width: 100%;
+  min-height: 48px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  background: rgba(13, 15, 20, 0.7);
+  border: 1px solid var(--border);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.box:focus-within:not(.disabled) {
+  border-color: rgba(228, 35, 46, 0.65);
+  box-shadow: 0 0 0 3px rgba(228, 35, 46, 0.14);
+}
+
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(228, 35, 46, 0.12);
+  border: 1px solid rgba(228, 35, 46, 0.35);
+  color: var(--accent-soft);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.removeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--accent-soft);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: opacity 0.16s ease;
+}
+
+.removeBtn:hover {
+  opacity: 0.7;
+}
+
+.inputWrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.input {
+  flex: 1;
+  min-width: 120px;
+  border: none;
+  background: transparent;
+  color: var(--foreground);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  padding: 4px 6px;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--foreground-subtle);
+  opacity: 0.8;
+}
+
+.addInlineBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: var(--surface-hover);
+  border: 1px solid var(--border-strong);
+  color: var(--foreground);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.addInlineBtn:hover {
+  background: rgba(228, 35, 46, 0.2);
+  border-color: var(--border-brand);
+}
+
+.suggestionsRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.suggestionsLabel {
+  font-size: 0.74rem;
+  color: var(--foreground-subtle);
+}
+
+.suggestionChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.suggestionChip {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px 9px;
+  color: var(--foreground-muted);
+  font-size: 0.74rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.suggestionChip:hover:not(:disabled) {
+  border-color: var(--border-brand);
+  color: var(--accent-soft);
+  background: rgba(228, 35, 46, 0.08);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.hasError .box {
+  border-color: rgba(255, 90, 95, 0.7);
+  background: rgba(255, 90, 95, 0.04);
+}
+
+.errorMessage {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 2px 0 0;
+  font-size: 0.78rem;
+  color: #ff9296;
+  line-height: 1.3;
+}

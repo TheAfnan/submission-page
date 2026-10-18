@@ -1,0 +1,410 @@
+.sectionCard {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  padding: clamp(20px, 3.5vw, 36px);
+  margin-bottom: 24px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.sectionCard:focus-within {
+  border-color: rgba(244, 245, 248, 0.18);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sectionNumberBadge {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--brand-red);
+  background: rgba(228, 35, 46, 0.1);
+  border: 1px solid rgba(228, 35, 46, 0.25);
+  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  font-feature-settings: 'tnum';
+  font-variant-numeric: tabular-nums;
+}
+
+.sectionTitleWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sectionEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.sectionEyebrow::before {
+  content: '';
+  width: 18px;
+  height: 2px;
+  background: var(--brand-red);
+  border-radius: 2px;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  font-weight: 700;
+  color: var(--foreground);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.sectionDescription {
+  margin: 2px 0 0;
+  font-size: 0.88rem;
+  color: var(--foreground-muted);
+  line-height: 1.5;
+}
+
+/* Grids */
+.gridTwoCol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.gridFullWidth {
+  grid-column: 1 / -1;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Team Members Dynamic List */
+.membersWrap {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.membersHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.membersSubheading {
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--foreground);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.memberCountBadge {
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--overlay);
+  border: 1px solid var(--border);
+  color: var(--foreground-muted);
+}
+
+.addMemberBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px dashed var(--border-brand);
+  background: rgba(228, 35, 46, 0.08);
+  color: var(--accent-soft);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.addMemberBtn:hover:not(:disabled) {
+  background: rgba(228, 35, 46, 0.16);
+  border-color: rgba(228, 35, 46, 0.5);
+  transform: translateY(-1px);
+}
+
+.addMemberBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.memberCard {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: rgba(13, 15, 20, 0.6);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.18s ease;
+}
+
+.memberCard:hover {
+  border-color: var(--border-strong);
+}
+
+.memberCardLeader {
+  border-color: rgba(228, 35, 46, 0.3);
+  background: radial-gradient(80% 120% at 0 0, rgba(228, 35, 46, 0.06), transparent 50%), rgba(13, 15, 20, 0.7);
+}
+
+.memberCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.memberCardTitle {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--foreground);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.02em;
+}
+
+.leaderPill {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: var(--accent-soft);
+  background: rgba(228, 35, 46, 0.15);
+  border: 1px solid rgba(228, 35, 46, 0.35);
+}
+
+.removeMemberBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  color: var(--foreground-subtle);
+  font-size: 0.78rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.removeMemberBtn:hover {
+  color: #ff9296;
+  background: rgba(255, 90, 95, 0.1);
+}
+
+/* Radio Cards (for Theme and Implementation Status) */
+.radioGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.radioGridFour {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.radioCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: rgba(13, 15, 20, 0.7);
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.22, 0.61, 0.36, 1);
+  text-align: left;
+}
+
+.radioCard:hover {
+  border-color: var(--border-strong);
+  background: rgba(18, 20, 27, 0.85);
+  transform: translateY(-1px);
+}
+
+.radioCardSelected {
+  border-color: rgba(228, 35, 46, 0.65) !important;
+  background: radial-gradient(100% 120% at 50% 0, rgba(228, 35, 46, 0.14), transparent 70%), rgba(18, 20, 27, 0.95) !important;
+  box-shadow: 0 4px 16px rgba(228, 35, 46, 0.12);
+}
+
+.radioCardTitle {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--foreground);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.radioCardDesc {
+  font-size: 0.78rem;
+  color: var(--foreground-muted);
+  line-height: 1.4;
+}
+
+.radioIndicator {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.radioCardSelected .radioIndicator {
+  border-color: var(--brand-red);
+  background: var(--brand-red);
+}
+
+.radioDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+/* Callout Box */
+.calloutBox {
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(244, 245, 248, 0.03);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.82rem;
+  color: var(--foreground-muted);
+  line-height: 1.5;
+}
+
+.calloutBox strong {
+  color: var(--foreground);
+}
+
+.calloutIcon {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Declarations Checkboxes */
+.declarationItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: rgba(13, 15, 20, 0.6);
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.declarationItem:hover {
+  border-color: var(--border-strong);
+  background: rgba(18, 20, 27, 0.8);
+}
+
+.declarationChecked {
+  border-color: rgba(228, 35, 46, 0.4);
+  background: rgba(228, 35, 46, 0.04);
+}
+
+.customCheckbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 1px solid var(--border-strong);
+  background: rgba(8, 9, 12, 0.7);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: all 0.16s ease;
+}
+
+.declarationChecked .customCheckbox {
+  background: var(--brand-red);
+  border-color: var(--brand-red);
+  color: #fff;
+}
+
+.declarationText {
+  font-size: 0.88rem;
+  color: var(--foreground);
+  line-height: 1.5;
+  user-select: none;
+}
+
+.declarationText strong {
+  color: var(--accent-soft);
+}
+
+@media (max-width: 860px) {
+  .gridTwoCol {
+    grid-template-columns: 1fr;
+  }
+  .radioGrid,
+  .radioGridFour {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .sectionHeader {
+    gap: 12px;
+  }
+  .sectionNumberBadge {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  .membersHeaderRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .addMemberBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}

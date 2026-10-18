@@ -1,0 +1,278 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.requiredMark {
+  color: var(--brand-red);
+  margin-left: 4px;
+  font-weight: 700;
+}
+
+.limitBadge {
+  font-size: 0.72rem;
+  color: var(--foreground-subtle);
+  background: var(--overlay);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.dropZone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 20px;
+  border-radius: var(--radius-md);
+  border: 1px dashed rgba(244, 245, 248, 0.2);
+  background: rgba(18, 20, 27, 0.45);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+  text-align: center;
+}
+
+.dropZone:hover:not(.disabled) {
+  border-color: rgba(228, 35, 46, 0.6);
+  background: rgba(228, 35, 46, 0.04);
+  transform: translateY(-1px);
+}
+
+.dropZone:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 2px;
+}
+
+.dragOver {
+  border-color: var(--brand-red) !important;
+  background: rgba(228, 35, 46, 0.08) !important;
+  transform: scale(1.005);
+}
+
+.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.uploadIconWrap {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(228, 35, 46, 0.1);
+  border: 1px solid rgba(228, 35, 46, 0.25);
+  color: var(--brand-coral);
+  margin-bottom: 12px;
+  transition: transform 0.2s ease;
+}
+
+.dropZone:hover .uploadIconWrap {
+  transform: translateY(-2px);
+  background: rgba(228, 35, 46, 0.18);
+}
+
+.uploadIcon {
+  width: 22px;
+  height: 22px;
+}
+
+.dropZoneText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.primaryText {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--foreground-muted);
+}
+
+.primaryText strong {
+  color: var(--foreground);
+}
+
+.formatsText {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--foreground-subtle);
+}
+
+.fileSelectedCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(18, 20, 27, 0.85);
+  border: 1px solid rgba(228, 35, 46, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.fileInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex: 1;
+}
+
+.fileIconWrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(228, 35, 46, 0.14);
+  border: 1px solid rgba(228, 35, 46, 0.3);
+  color: var(--brand-coral);
+  flex-shrink: 0;
+}
+
+.fileIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.fileDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.fileNameRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.fileName {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--foreground);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 280px;
+}
+
+.readyBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--success);
+  background: rgba(98, 217, 155, 0.1);
+  border: 1px solid rgba(98, 217, 155, 0.25);
+  padding: 1px 7px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.fileMeta {
+  font-size: 0.76rem;
+  color: var(--foreground-subtle);
+}
+
+.fileActions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  color: var(--foreground-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.actionBtn:hover:not(:disabled) {
+  color: var(--foreground);
+  background: var(--surface-hover);
+  border-color: rgba(244, 245, 248, 0.3);
+}
+
+.actionBtnDanger:hover:not(:disabled) {
+  color: #ff9296;
+  border-color: rgba(255, 90, 95, 0.45);
+  background: rgba(255, 90, 95, 0.1);
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.76rem;
+  color: var(--foreground-subtle);
+  line-height: 1.4;
+}
+
+.hasError .dropZone {
+  border-color: rgba(255, 90, 95, 0.7);
+  background: rgba(255, 90, 95, 0.03);
+}
+
+.errorMessage {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 2px 0 0;
+  font-size: 0.78rem;
+  color: #ff9296;
+  line-height: 1.3;
+}
+
+@media (max-width: 600px) {
+  .fileSelectedCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .fileActions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .fileName {
+    max-width: 200px;
+  }
+}

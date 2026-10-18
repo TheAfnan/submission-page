@@ -1,0 +1,123 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.labelRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--foreground);
+  letter-spacing: 0.01em;
+}
+
+.requiredMark {
+  color: var(--brand-red);
+  margin-left: 4px;
+  font-weight: 700;
+}
+
+.charCount {
+  font-size: 0.74rem;
+  color: var(--foreground-subtle);
+  font-feature-settings: 'tnum';
+  font-variant-numeric: tabular-nums;
+}
+
+.charCountWarn {
+  color: var(--warning);
+}
+
+.charCountBelow {
+  color: var(--foreground-muted);
+}
+
+.textareaContainer {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-sm);
+  background: rgba(13, 15, 20, 0.7);
+  border: 1px solid var(--border);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.textareaContainer:hover:not(.disabled) {
+  border-color: var(--border-strong);
+  background: rgba(18, 20, 27, 0.85);
+}
+
+.textareaContainer:focus-within:not(.disabled) {
+  border-color: rgba(228, 35, 46, 0.65);
+  box-shadow: 0 0 0 3px rgba(228, 35, 46, 0.14);
+  background: rgba(18, 20, 27, 0.95);
+}
+
+.textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  background: transparent;
+  color: var(--foreground);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  border-radius: inherit;
+  outline: none;
+  resize: vertical;
+  min-height: 90px;
+}
+
+.textarea::placeholder {
+  color: var(--foreground-subtle);
+  opacity: 0.8;
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.76rem;
+  color: var(--foreground-subtle);
+  line-height: 1.4;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: rgba(244, 245, 248, 0.02);
+}
+
+.disabled .textarea {
+  cursor: not-allowed;
+}
+
+.hasError .textareaContainer {
+  border-color: rgba(255, 90, 95, 0.7);
+  background: rgba(255, 90, 95, 0.04);
+}
+
+.hasError .textareaContainer:focus-within {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px rgba(255, 90, 95, 0.18);
+}
+
+.errorMessage {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 2px 0 0;
+  font-size: 0.78rem;
+  color: #ff9296;
+  line-height: 1.3;
+}
+
+.errorMessage svg {
+  flex-shrink: 0;
+}
