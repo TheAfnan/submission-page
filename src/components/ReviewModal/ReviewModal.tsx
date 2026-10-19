@@ -116,15 +116,11 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                 <span className={styles.dataLabel}>Project Title</span>
                 <strong className={styles.dataValue}>{data.projectTitle || '—'}</strong>
               </div>
-              <div className={styles.dataItem}>
+              <div className={`${styles.dataItem} ${styles.fullWidth}`}>
                 <span className={styles.dataLabel}>Competition Theme</span>
                 <strong className={styles.dataValue} style={{ color: 'var(--brand-coral)' }}>
                   {data.theme || '—'}
                 </strong>
-              </div>
-              <div className={styles.dataItem}>
-                <span className={styles.dataLabel}>Implementation Stage</span>
-                <strong className={styles.dataValue}>{data.implementationStatus || '—'}</strong>
               </div>
               <div className={`${styles.dataItem} ${styles.fullWidth}`}>
                 <span className={styles.dataLabel}>Tech Stack & Tools</span>
@@ -137,12 +133,8 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                 </div>
               </div>
               <div className={`${styles.dataItem} ${styles.fullWidth}`}>
-                <span className={styles.dataLabel}>Problem Statement</span>
-                <p className={styles.textExcerpt}>{data.problemStatement || '—'}</p>
-              </div>
-              <div className={`${styles.dataItem} ${styles.fullWidth}`}>
-                <span className={styles.dataLabel}>Proposed Solution</span>
-                <p className={styles.textExcerpt}>{data.proposedSolution || '—'}</p>
+                <span className={styles.dataLabel}>Project Summary & Overview</span>
+                <p className={styles.textExcerpt}>{data.projectDescription || '—'}</p>
               </div>
             </div>
           </div>

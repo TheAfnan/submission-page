@@ -69,14 +69,15 @@ async function executeProductionSubmission(
   // 2. Project details
   body.append('projectTitle', formData.projectTitle.trim())
   body.append('theme', formData.theme)
-  body.append('problemStatement', formData.problemStatement.trim())
-  body.append('proposedSolution', formData.proposedSolution.trim())
-  body.append('projectOverview', formData.projectOverview.trim())
-  body.append('keyFeatures', formData.keyFeatures.trim())
-  body.append('targetUsersAndImpact', formData.targetUsersAndImpact.trim())
+  body.append('projectDescription', formData.projectDescription.trim())
   body.append('techStack', JSON.stringify(formData.techStack))
-  body.append('innovationUniqueness', formData.innovationUniqueness.trim())
-  body.append('implementationStatus', formData.implementationStatus)
+  if (formData.problemStatement) body.append('problemStatement', formData.problemStatement.trim())
+  if (formData.proposedSolution) body.append('proposedSolution', formData.proposedSolution.trim())
+  if (formData.projectOverview) body.append('projectOverview', formData.projectOverview.trim())
+  if (formData.keyFeatures) body.append('keyFeatures', formData.keyFeatures.trim())
+  if (formData.targetUsersAndImpact) body.append('targetUsersAndImpact', formData.targetUsersAndImpact.trim())
+  if (formData.innovationUniqueness) body.append('innovationUniqueness', formData.innovationUniqueness.trim())
+  if (formData.implementationStatus) body.append('implementationStatus', formData.implementationStatus)
 
   // 3. Links and deliverables
   body.append('githubRepoUrl', formData.githubRepoUrl.trim())
@@ -192,7 +193,7 @@ async function simulateDemoSubmission(
     memberCount: formData.teamMembers.length,
     projectTitle: formData.projectTitle.trim(),
     theme: formData.theme,
-    implementationStatus: formData.implementationStatus,
+    implementationStatus: formData.implementationStatus || 'Submitted',
     techStack: formData.techStack,
     presentationFileName: formData.presentationFile?.name || 'presentation.pdf',
     presentationFileSize: formData.presentationFile?.size || 0,

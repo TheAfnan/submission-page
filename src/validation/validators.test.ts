@@ -49,14 +49,7 @@ const VALID_FORM_DATA: SubmissionFormData = {
   ],
   projectTitle: 'VoiceVision: Assistive Navigation for the Visually Impaired',
   theme: 'Assistive Technology',
-  problemStatement:
-    'Visually impaired university students struggle with independent navigation through complex indoor campus environments without assistance.',
-  proposedSolution:
-    'A low-cost spatial audio edge wearable that processes real-time LiDAR and camera streams to deliver tactile and 3D binaural directional sound cues.',
-  projectOverview:
-    'VoiceVision integrates a lightweight edge computer with custom stereo vision models. The device maps hallways, obstacles, and door numbers in real-time, outputting directional guidance over standard bone-conduction headphones.',
-  keyFeatures:
-    '1. Real-time binaural spatial audio engine\n2. On-device edge neural inference with zero cloud dependency\n3. High-contrast tactile companion app\n4. Automatic emergency distress beacon',
+  projectDescription: 'A low-cost spatial audio edge wearable that processes real-time LiDAR and camera streams to deliver tactile and 3D binaural directional sound cues for visually impaired students.',
   targetUsersAndImpact:
     'Targeting over 12,000 university students with low vision in India, providing 94% obstacle clearance confidence and eliminating dependency on human guides.',
   techStack: ['Python', 'OpenCV', 'PyTorch', 'React', 'FastAPI'],
@@ -195,14 +188,8 @@ describe('Validators Unit Tests', () => {
         teamMembers: [],
         projectTitle: '',
         theme: '',
-        problemStatement: '',
-        proposedSolution: '',
-        projectOverview: '',
-        keyFeatures: '',
-        targetUsersAndImpact: '',
+        projectDescription: '',
         techStack: [],
-        innovationUniqueness: '',
-        implementationStatus: '',
         presentationFile: null,
         sourceCodeZipFile: null,
         githubRepoUrl: '',
@@ -221,14 +208,8 @@ describe('Validators Unit Tests', () => {
       expect(errors.collegeName).toBeDefined()
       expect(errors.projectTitle).toBeDefined()
       expect(errors.theme).toBeDefined()
-      expect(errors.problemStatement).toBeDefined()
-      expect(errors.proposedSolution).toBeDefined()
-      expect(errors.projectOverview).toBeDefined()
-      expect(errors.keyFeatures).toBeDefined()
-      expect(errors.targetUsersAndImpact).toBeDefined()
+      expect(errors.projectDescription).toBeDefined()
       expect(errors.techStack).toBeDefined()
-      expect(errors.innovationUniqueness).toBeDefined()
-      expect(errors.implementationStatus).toBeDefined()
       expect(errors.presentationFile).toBeDefined()
       expect(errors.sourceCodeZipFile).toBeDefined()
       expect(errors.githubRepoUrl).toBeDefined()

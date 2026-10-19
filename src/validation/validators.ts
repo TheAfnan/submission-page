@@ -185,60 +185,16 @@ export function validateForm(data: SubmissionFormData, config: PortalConfig): Fo
     errors.theme = 'Please select a competition theme.'
   }
 
-  if (!data.problemStatement.trim()) {
-    errors.problemStatement = 'Problem statement is required.'
-  } else if (data.problemStatement.trim().length < 40) {
-    errors.problemStatement = 'Problem statement is too brief (minimum 40 characters).'
-  } else if (data.problemStatement.trim().length > 1200) {
-    errors.problemStatement = 'Problem statement cannot exceed 1200 characters.'
-  }
-
-  if (!data.proposedSolution.trim()) {
-    errors.proposedSolution = 'Proposed solution is required.'
-  } else if (data.proposedSolution.trim().length < 40) {
-    errors.proposedSolution = 'Proposed solution is too brief (minimum 40 characters).'
-  } else if (data.proposedSolution.trim().length > 1200) {
-    errors.proposedSolution = 'Proposed solution cannot exceed 1200 characters.'
-  }
-
-  if (!data.projectOverview.trim()) {
-    errors.projectOverview = 'Project overview is required.'
-  } else if (data.projectOverview.trim().length < 50) {
-    errors.projectOverview = 'Project overview is too brief (minimum 50 characters).'
-  } else if (data.projectOverview.trim().length > 1500) {
-    errors.projectOverview = 'Project overview cannot exceed 1500 characters.'
-  }
-
-  if (!data.keyFeatures.trim()) {
-    errors.keyFeatures = 'Key features and functionality are required.'
-  } else if (data.keyFeatures.trim().length < 30) {
-    errors.keyFeatures = 'Key features description is too brief (minimum 30 characters).'
-  } else if (data.keyFeatures.trim().length > 1500) {
-    errors.keyFeatures = 'Key features cannot exceed 1500 characters.'
-  }
-
-  if (!data.targetUsersAndImpact.trim()) {
-    errors.targetUsersAndImpact = 'Target users and expected impact are required.'
-  } else if (data.targetUsersAndImpact.trim().length < 30) {
-    errors.targetUsersAndImpact = 'Target users and impact is too brief (minimum 30 characters).'
-  } else if (data.targetUsersAndImpact.trim().length > 1200) {
-    errors.targetUsersAndImpact = 'Target users and impact cannot exceed 1200 characters.'
+  if (!data.projectDescription?.trim()) {
+    errors.projectDescription = 'Project summary / description is required.'
+  } else if (data.projectDescription.trim().length < 15) {
+    errors.projectDescription = 'Please enter at least 15 characters describing your project.'
+  } else if (data.projectDescription.trim().length > 1500) {
+    errors.projectDescription = 'Description cannot exceed 1500 characters.'
   }
 
   if (!data.techStack || data.techStack.length === 0) {
     errors.techStack = 'Please specify at least one technology, framework, language, or tool.'
-  }
-
-  if (!data.innovationUniqueness.trim()) {
-    errors.innovationUniqueness = 'Innovation and uniqueness description is required.'
-  } else if (data.innovationUniqueness.trim().length < 30) {
-    errors.innovationUniqueness = 'Innovation description is too brief (minimum 30 characters).'
-  } else if (data.innovationUniqueness.trim().length > 1200) {
-    errors.innovationUniqueness = 'Innovation description cannot exceed 1200 characters.'
-  }
-
-  if (!data.implementationStatus) {
-    errors.implementationStatus = 'Please indicate the current implementation status.'
   }
 
   // 3. Submissions

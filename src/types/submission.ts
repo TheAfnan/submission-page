@@ -30,14 +30,15 @@ export interface SubmissionFormData {
   // Section 2: Project Details
   projectTitle: string
   theme: ProjectTheme | ''
-  problemStatement: string
-  proposedSolution: string
-  projectOverview: string
-  keyFeatures: string
-  targetUsersAndImpact: string
+  projectDescription: string
   techStack: string[]
-  innovationUniqueness: string
-  implementationStatus: ImplementationStatus | ''
+  problemStatement?: string
+  proposedSolution?: string
+  projectOverview?: string
+  keyFeatures?: string
+  targetUsersAndImpact?: string
+  innovationUniqueness?: string
+  implementationStatus?: ImplementationStatus | ''
 
   // Section 3: Submissions
   presentationFile: File | null
