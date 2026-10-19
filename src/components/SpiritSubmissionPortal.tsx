@@ -85,8 +85,7 @@ export const SpiritSubmissionPortal: React.FC<SpiritSubmissionPortalProps> = ({
   onSuccess,
   onError,
 }) => {
-  // Mode state (can be toggled for testing)
-  const [currentMode, setCurrentMode] = useState<'demo' | 'production'>(initialMode)
+  const [currentMode] = useState<'demo' | 'production'>(initialMode)
 
   // Portal configuration
   const config = useMemo<PortalConfig>(
@@ -246,13 +245,7 @@ export const SpiritSubmissionPortal: React.FC<SpiritSubmissionPortalProps> = ({
   return (
     <div className={styles.portalRoot}>
       {/* A. Compact Header */}
-      <Header
-        backToEventUrl={config.backToEventUrl}
-        mode={config.mode}
-        onToggleMode={() =>
-          setCurrentMode((prev) => (prev === 'demo' ? 'production' : 'demo'))
-        }
-      />
+      <Header backToEventUrl={config.backToEventUrl} />
 
       {/* B. Event Information Strip & Deadline */}
       <EventStrip

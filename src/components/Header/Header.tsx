@@ -3,14 +3,10 @@ import styles from './Header.module.css'
 
 interface HeaderProps {
   backToEventUrl?: string
-  mode?: 'demo' | 'production'
-  onToggleMode?: () => void
 }
 
 export const Header: React.FC<HeaderProps> = ({
   backToEventUrl = 'https://spirit-dsmnru.vercel.app/events/spirit-3-0-buildathon',
-  mode = 'demo',
-  onToggleMode,
 }) => {
   return (
     <header className={styles.header}>
@@ -54,22 +50,6 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         <div className={styles.rightCol}>
-          {/* Mode Pill Indicator */}
-          <div className={styles.modeWrapper}>
-            <button
-              type="button"
-              className={`${styles.modeBadge} ${mode === 'demo' ? styles.modeDemo : styles.modeProd}`}
-              onClick={onToggleMode}
-              title={
-                mode === 'demo'
-                  ? 'Currently in DEMO MODE (simulated backend). Click to toggle.'
-                  : 'Currently in PRODUCTION MODE (live API endpoints). Click to toggle.'
-              }
-            >
-              <span className={styles.modeDot} />
-              <span className={styles.modeLabel}>{mode === 'demo' ? 'Demo Mode' : 'Production Mode'}</span>
-            </button>
-          </div>
 
           {/* Back to event link */}
           <a
