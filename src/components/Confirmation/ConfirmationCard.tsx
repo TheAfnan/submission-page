@@ -13,13 +13,11 @@ import styles from './ConfirmationCard.module.css'
 
 interface ConfirmationCardProps {
   result: SubmissionResult
-  backToEventUrl?: string
   onReset?: () => void
 }
 
 export const ConfirmationCard: React.FC<ConfirmationCardProps> = ({
   result,
-  backToEventUrl = 'https://spirit-dsmnru.vercel.app/events/spirit-3-0-buildathon',
   onReset,
 }) => {
   const [copied, setCopied] = useState(false)
@@ -220,24 +218,16 @@ export const ConfirmationCard: React.FC<ConfirmationCardProps> = ({
             <span>Download Submission Receipt (.JSON)</span>
           </button>
 
-          <a
-            href={backToEventUrl}
-            className={styles.eventPageBtn}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>Return to Event Page</span>
-            <ExternalLink size={16} />
-          </a>
-        </div>
-
-        {onReset && (
-          <div className={styles.resetRow}>
-            <button type="button" className={styles.resetBtn} onClick={onReset}>
-              Submit another project entry
+          {onReset && (
+            <button
+              type="button"
+              className={styles.eventPageBtn}
+              onClick={onReset}
+            >
+              <span>Submit Another Project Entry</span>
             </button>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   )

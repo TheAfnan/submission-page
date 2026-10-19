@@ -246,7 +246,7 @@ export const SpiritSubmissionPortal: React.FC<SpiritSubmissionPortalProps> = ({
   return (
     <div className={styles.portalRoot}>
       {/* A. Compact Header */}
-      <Header backToEventUrl={config.backToEventUrl} />
+      <Header />
 
       {/* B. Event Information Strip & Deadline */}
       <EventStrip
@@ -262,7 +262,6 @@ export const SpiritSubmissionPortal: React.FC<SpiritSubmissionPortalProps> = ({
         {submissionResult ? (
           <ConfirmationCard
             result={submissionResult}
-            backToEventUrl={config.backToEventUrl}
             onReset={handleResetForm}
           />
         ) : (
@@ -383,14 +382,6 @@ export const SpiritSubmissionPortal: React.FC<SpiritSubmissionPortalProps> = ({
           <span>
             © 2026 SPIRIT 3.0 – Buildathon • Dr. Shakuntala Misra National Rehabilitation University (DSMNRU), Lucknow.
           </span>
-          <a
-            href={config.backToEventUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.footerLink}
-          >
-            Event Rules & Guidelines ↗
-          </a>
         </div>
       </footer>
     </div>
