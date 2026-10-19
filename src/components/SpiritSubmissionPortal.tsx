@@ -318,11 +318,6 @@ export const SpiritSubmissionPortal: React.FC<SpiritSubmissionPortalProps> = ({
 
             {/* Form Title & Introduction */}
             <div className={styles.formIntro}>
-              <div className={styles.introEyebrow}>
-                <span>OFFICIAL PORTAL</span>
-                <span>•</span>
-                <span>ROUND 1 IDEA SCREENING</span>
-              </div>
               <h2 className={styles.introHeading}>
                 SPIRIT 3.0 – <em>Project Submission</em>
               </h2>
